@@ -1,0 +1,76 @@
+.sectionColorPrimary {
+  background: #00788b;
+  color: white;
+}
+
+.sectionColorSecondary {
+  background: #333333;
+  color: white;
+}
+
+.sectionColorTertiary {
+  background: #e4e4e5;
+}
+
+.headerTitle {
+  font-family: Rockwell, serif;
+  font-size: 55px;
+}
+
+.sectionHeader {
+  font-family: Rockwell, serif;
+  font-size: 30px;
+  height: 75px;
+}
+
+.headerSubTitle {
+  font-size: 25px;
+}
+
+.sectionTitlePrimary {
+  font-family: Rockwell, serif;
+}
+
+.sectionTitleSecondary {
+  font-size: 25px;
+  font-family: Rockwell, serif;
+}
+
+.careerTitles {
+  font-size: 25px;
+}
+.careerTitles ul {
+  list-style-type: none;
+}
+
+.contacts {
+  font-size: 20px;
+}
+.contacts ul {
+  list-style-type: none;
+}
+
+.profile {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.indent {
+  padding-left: 100px;
+}
+
+@media (max-width: 991.98px) {
+  .indent {
+    padding-left: 50px;
+  }
+}
+@media (max-width: 767.98px) {
+  .headerTitle {
+    font-size: xx-large;
+  }
+  .indent {
+    padding-left: 50px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
