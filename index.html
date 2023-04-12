@@ -18,124 +18,190 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown link
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="overflow-hidden">
+<!--        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">-->
+<!--            <div class="container-fluid">-->
+<!--                <a class="navbar-brand" href="#">Navbar</a>-->
+<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
+<!--                <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+<!--                    <ul class="navbar-nav">-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">Experience</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">References</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">Contact Me</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item dropdown">-->
+<!--                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                                Dropdown link-->
+<!--                            </a>-->
+<!--                            <ul class="dropdown-menu">-->
+<!--                                <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--                                <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--                                <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
 
 <!--First Row - Name and Career Titles-->
-    <div class="row">
-<!--        Name-->
-        <div class="col col-12 col-md-7 sectionColorSecondary d-flex align-items-center p-0 pt-3 pb-3">
-            <div class="headerTitle text-uppercase indent">
-                <span>{{ author }}</span>
+        <div class="row">
+<!--Name-->
+            <div class="col col-12 col-md-7 sectionColorSecondary d-flex align-items-center p-0 pt-3 pb-3">
+                <div class="headerTitle text-uppercase indent">
+                    <span>{{ author }}</span>
+                </div>
+            </div>
+<!--Career Titles-->
+            <div class="col col-12 col-md-5 career sectionColorPrimary d-flex align-items-center p-0 pt-3 pb-3">
+                <div class="careerTitles indent">
+                    <ul class="p-0 list-unstyled">
+                        <li v-for="title in careerTitles">
+                            <span>{{ title }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-<!--        Career Titles-->
-        <div class="col col-12 col-md-5 sectionColorPrimary d-flex align-items-center p-0 pt-3 pb-3">
-            <div class="careerTitles indent">
-                <ul class="p-0">
-                    <li v-for="title in careerTitles">
-                        {{ title }}
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
 <!--Second Row - Profile and Contact-->
-    <div class="row">
-<!--        Profile-->
-        <div class="col col-12 col-md-7 p-0 profile">
-            <div class="sectionHeader sectionColorPrimary text-uppercase d-flex align-items-center indent">
-                <span>Profile</span>
+        <div class="row">
+<!--Profile-->
+            <div class="col col-12 col-md-7 p-0 profile">
+                <div class="sectionHeader sectionColorPrimary text-uppercase d-flex align-items-center indent">
+                    <span>Profile</span>
+                </div>
+                <div class="content indent pt-3 pe-5">
+                    <p class="d-block d-sm-block d-lg-none">{{ summaryXs }}</p>
+                    <p class="d-none d-lg-block">{{ summaryMd }}</p>
+                </div>
             </div>
-            <div class="content indent pt-3 pe-5">
-                <p class="d-block d-sm-block d-lg-none">{{ summaryXs }}</p>
-                <p class="d-none d-lg-block">{{ summaryMd }}</p>
-            </div>
-        </div>
 
 <!--Contact-->
-        <div class="col col-12 col-md-5 p-0 contacts sectionColorTertiary">
-            <div class="sectionHeader sectionColorSecondary text-uppercase d-flex align-items-center indent">
-                <span>Contact</span>
-            </div>
-            <div class="content contacts p-0">
-                <ul class="p-0">
-                    <li class="indent" v-for="contact in contactInfo">
-                        <i :class="contact.icon"></i>
-                        <span class="px-2" :class="contact.color ? 'text-info' : 'text-black'">{{ contact.text }}</span>
-                    </li>
-                </ul>
+            <div class="col col-12 col-md-5 p-0 contacts sectionColorTertiary">
+                <div class="sectionHeader sectionColorSecondary text-uppercase d-flex align-items-center indent">
+                    <span>Contact</span>
+                </div>
+                <div class="content contacts">
+                    <ul class="p-0 mt-3 mb-3">
+                        <li class="indent" v-for="contact in contactInfo">
+                            <i :class="contact.icon"></i>
+                            <span class="px-2" :class="contact.color ? 'textColorPrimary' : 'text-black'">{{ contact.text }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+
+
 <!--Third Row - Experience, Skills, and Education-->
-    <div class="row">
-<!--        Experience-->
-        <div class="col col-12 col-md-7 p-0 experience">
-            <div class="sectionHeader sectionColorPrimary indent text-uppercase d-flex align-items-center">
-                <span>Experience</span>
+        <div class="row">
+<!--Experience-->
+            <div class="col col-12 col-md-7 p-0 experience">
+                <div class="sectionHeader sectionColorPrimary indent text-uppercase d-flex align-items-center">
+                    <span>Experience</span>
+                </div>
+                <div class="experience mt-3 mb-3 me-5">
+                    <ul class="indent list-unstyled">
+                        <li class="mb-3" v-for="exp in experience">
+                            <h3>{{ exp.title }}</h3>
+                            <span class="textColorPrimary" v-if="exp.year">{{ exp.year }}</span>
+                            <span class="textColorPrimary" v-if="exp.startYear">{{ exp.startYear}} - {{ exp.endYear }}</span>
+                            <p class="justifyText">{{ exp.summary }}</p>
+                            <div class="project d-none d-lg-block" v-if="exp.project">
+                                <strong>Description: </strong>
+                                <ul>
+                                    <li class="justifyText" v-for="desc in exp.description">{{ desc }}</li>
+                                </ul>
+                                <br>
+                                <strong>Skills Highlighted: </strong>
+                                <ul>
+                                    <li v-for="skill in exp.skills">{{ skill }}</li>
+                                </ul>
+                                <br>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div>
-
+<!--Skills-->
+            <div class="col col-12 col-md-5 p-0 sectionColorTertiary">
+                <div class="sectionColorSecondary sectionHeader indent text-uppercase d-flex align-items-center">
+                    <span>Skills</span>
+                </div>
+                <div class="skills">
+                    <ul class="indent m-3">
+                        <li class="" v-for="skill in skills">
+                            <!--                        <i class="bi bi-circle-fill"></i>-->
+                            <span>{{ skill }}</span>
+                        </li>
+                    </ul>
+                </div>
+<!-- Education-->
+                <div class="sectionColorSecondary sectionHeader indent text-uppercase d-flex align-items-center">
+                    <span>Education</span>
+                </div>
+                <div class="education">
+                    <ul class="indent list-unstyled me-5">
+                        <li class="pt-3 pb-3" v-for="edu in educationInfo">
+                            <h3 class="p-0 m-0">{{ edu.name }}</h3>
+                            <span class="textColorPrimary">{{ edu.startYear }} - {{ edu.endYear }}</span><br>
+                            <em class="italics">{{ edu.degreeEarned }}</em><br>
+                            <span class="ms-3" v-if="edu.gpa"><strong>GPA: </strong>{{ edu.gpa }}</span><br>
+<!--Societies-->
+                            <div v-if="edu.societies">
+                                <strong >Societies: </strong><br>
+                                <span class="ms-3 textColorPrimary" v-for="society in edu.societies">{{ society }}<br></span>
+                            </div>
+<!--Activities-->
+                            <div v-if="edu.activities">
+                                <strong>Activities:</strong><br>
+                                <span class="ms-3 textColorPrimary" v-for="activity in edu.activities">{{ activity }}</span><br>
+                            </div>
+                            <span>{{ edu.content }}</span>
+                        </li>
+                    </ul>
+                </div>
+<!--Extra Activities-->
+                <div class="sectionColorSecondary sectionHeader indent text-uppercase d-flex align-items-center">
+                    <span>Activities</span>
+                </div>
+                <div class="activity">
+                    <ul class="indent list-unstyled me-5">
+                        <li class="pt-3 pb-3" v-for="activity in activityInfo">
+                            <h3 class="p-0 m-0">{{ activity.title }}</h3>
+                            <span class="textColorPrimary">{{ activity.startYear }} - {{ activity.endYear }}</span><br>
+                            <em>{{ activity.content }}</em><br>
+                            <span class="justifyText">{{ activity.description }}</span><br>
+                        </li>
+                    </ul>
+                </div>
+<!--Tags-->
+                <div class="sectionColorSecondary sectionHeader indent text-uppercase d-flex align-items-center">
+                    <span>Tags</span>
+                </div>
+                <div class="activity m-3">
+                    <span class="m-1 badge rounded-pill text-bg-primary" v-for="tag in tags">{{ tag }}</span>
+                </div>
             </div>
         </div>
-<!--        Skills-->
-        <div class="col col-12 col-md-5 p-0 sectionColorTertiary">
-            <div class="sectionColorSecondary sectionHeader indent text-uppercase d-flex align-items-center">
-                <span>Skills</span>
-            </div>
-            <div>
-                <ul>
-                    <li class="indent" v-for="skill in skills">
-                        {{ skill }}
-                    </li>
-                </ul>
-            </div>
-<!--            Education-->
-            <div class="sectionColorSecondary sectionHeader indent text-uppercase d-flex align-items-center">
-                <span>Education</span>
-            </div>
-            <div>
 
-            </div>
-        </div>
+        <footer class="d-sm-flex justify-content-center text-light d-flex align-items-center bg-dark">
+            <p class="text-center slogan">Copyright @ 2023</p>
+        </footer>
     </div>
 
 
-
-    <footer class="d-sm-flex justify-content-center text-light d-flex align-items-center bg-dark">
-        <p class="text-center slogan">Copyright @ 2023</p>
-    </footer>
 
 </div>
 

@@ -10,6 +10,9 @@
 .sectionColorTertiary {
   background: #e4e4e5;
 }
+.textColorPrimary {
+  color: #00788b;
+}
 
 .headerTitle {
   font-family: Rockwell, serif;
@@ -23,11 +26,9 @@
 
 
 .headerSubTitle {
-
   font-size: 25px;
 }
 .sectionTitlePrimary {
-
   font-family: Rockwell, serif;
 }
 .sectionTitleSecondary {
@@ -36,9 +37,13 @@
 }
 
 .careerTitles {
+  font-family: Rockwell, serif;
   font-size: 25px;
-  ul {
-    list-style-type: none;
+  li{
+    border-bottom: 2px solid #014350;
+  }
+  li:last-child {
+    border: none;
   }
 }
 .contacts {
@@ -51,10 +56,60 @@
   text-align: justify;
   text-justify: inter-word;
 }
+.justifyText {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.skills {
+  span {
+    color: #00788b;
+    font-family: Arial, serif;
+    font-size: large;
+  }
+}
+.experience {
+  font-family: Arial, sans-serif;
+  li {
+    border-bottom: 1px solid black;
+  }
+  li:last-child {
+    border: none;
+  }
+  .project {
+    li {
+      border: none;
+    }
+  }
+}
+.education {
+  li {
+    border-bottom: 1px solid black;
+  }
+  li:last-child {
+    border: none;
+  }
+}
+
+.activity {
+  li {
+    border-bottom: 1px solid black;
+  }
+  li:last-child {
+    border: none;
+  }
+}
+
 // Helpers
 .indent {
   padding-left: 100px;
 }
+.listStyleRemove {
+  ul{
+    list-style-type: none;
+  }
+}
+
+
 
 // lg display
 @media (max-width: 991.98px) {
@@ -67,6 +122,19 @@
 @media (max-width: 767.98px) {
   .headerTitle {
     font-size: xx-large;
+  }
+  .career {
+    background: #005360;
+  }
+  .careerTitles {
+    font-family: Rockwell, serif;
+    font-size: 25px;
+    li{
+      border-bottom: 2px solid #0097b9;
+    }
+    li:last-child {
+      border: none;
+    }
   }
   .indent {
     padding-left: 50px;
