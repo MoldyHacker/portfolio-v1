@@ -11,8 +11,8 @@ const app = Vue.createApp({
             contactInfo: [
                 {icon: 'bi bi-telephone-fill', text: '+1 (414) 852-5174', color: false},
                 {icon: 'bi bi-share-fill', text: 'linktr.ee/moldyhacker', color: false},
-                {icon: 'bi bi-envelope-fill', text: 'chris.moldy@gmail.com', color: true},
-                {icon: 'bi bi-github', text: 'github.com/moldyhacker', color: true},
+                {icon: 'bi bi-envelope-fill', text: 'chris.moldy@gmail.com', color: false},
+                {icon: 'bi bi-github', text: 'github.com/moldyhacker', color: false},
             ],
             experience: [ // year: '' for single year projects startYear: '' & endYear: '' for multi-year jobs
                 {title: 'Java Text-Based Adventure Game', year: '2022', project: true, description: [
@@ -52,6 +52,13 @@ const app = Vue.createApp({
                     ], summary: 'I designed and implemented an Entity Framework database using .NET technologies, incorporating dependency injection for flexible and extensible database operations. The project followed best practices for database design, validation, and error handling. I used C#, Visual Studio, and SQL Server to create a scalable and efficient database solution. The project showcased my expertise in Entity Framework, .NET technologies, and implementing dependency injection for maintainable and modular code.',
                 },
                 {title: 'JavaScript App Project', year: '2023', project: true, description: '', skills: '', summary: ''},
+            ],
+            experience1: [
+                {title: 'MYSHOCK Tool & Die', startYear: '2018', endYear: 'Present', description: [
+
+                    ], skills: [
+
+                    ], summary: ''},
             ],
             skills: ['HTML5 / CSS3', 'JavaScript / TypeScript / ES6', 'Vue3, jQuery, Bootstrap', 'Java, C#, Python', '.Net / EF / IF', 'T-SQL / SQL Server', 'SOLID, ACID'],
             educationInfo: [

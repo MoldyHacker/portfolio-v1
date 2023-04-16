@@ -117,14 +117,14 @@
                             <h3>{{ exp.title }}</h3>
                             <span class="textColorPrimary" v-if="exp.year">{{ exp.year }}</span>
                             <span class="textColorPrimary" v-if="exp.startYear">{{ exp.startYear}} - {{ exp.endYear }}</span>
-                            <p class="justifyText">{{ exp.summary }}</p>
+                            <p v-if="exp.summary" class="justifyText">{{ exp.summary }}</p>
                             <div class="project d-none d-lg-block" v-if="exp.project">
-                                <strong>Description: </strong>
+                                <strong v-if="exp.description">Description: </strong>
                                 <ul>
                                     <li class="justifyText" v-for="desc in exp.description">{{ desc }}</li>
                                 </ul>
                                 <br>
-                                <strong>Skills Highlighted: </strong>
+                                <strong v-if="exp.skills">Skills Highlighted: </strong>
                                 <ul>
                                     <li v-for="skill in exp.skills">{{ skill }}</li>
                                 </ul>
